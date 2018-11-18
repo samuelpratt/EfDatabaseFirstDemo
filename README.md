@@ -17,3 +17,31 @@ docker-compose up -d
 ## Passwords
 
 Yes, these are checked in. Yes, this is all running on SA, Yes, I know it's not a good idea IRL. No, it doesn't matter in this case!
+
+## Rebuild Model
+
+### Create a project
+
+ dotnet new classlib
+
+### Fix the csproj file
+
+Make sure you have a runtime version in the Model CSPROJ file: -
+
+```XML
+<Project Sdk="Microsoft.NET.Sdk">  
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <RuntimeFrameworkVersion>2.1.6</RuntimeFrameworkVersion>
+    </PropertyGroup>
+ </Project>
+ ```
+
+### Add required NuGet packages
+
+ dotnet add package Microsoft.EntityFrameworkCore.Design
+ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+### Rebuild framework
+
+ dotnet ef dbcontext scaffold "Server=localhost;Database=EfDemo;User Id=SA;Password=P@55w0rd;" Microsoft.EntityFrameworkCore.SqlServer -o Models
