@@ -22,7 +22,9 @@ Yes, these are checked in. Yes, this is all running on SA, Yes, I know it's not 
 
 ### Create a project
 
- dotnet new classlib
+```shell
+dotnet new classlib
+```
 
 ### Fix the csproj file
 
@@ -38,10 +40,13 @@ Make sure you have a runtime version in the Model CSPROJ file: -
  ```
 
 ### Add required NuGet packages
-
- dotnet add package Microsoft.EntityFrameworkCore.Design
- dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+```shell
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+```
 
 ### Rebuild framework
 
- dotnet ef dbcontext scaffold "Server=localhost;Database=EfDemo;User Id=SA;Password=P@55w0rd;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+```shell
+dotnet ef dbcontext scaffold "Server=localhost;Database=EfDemo;User Id=SA;Password=P@55w0rd;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+```
