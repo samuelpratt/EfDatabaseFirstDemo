@@ -1,0 +1,3 @@
+[submodule "SqlServerDocker"]
+	path = SqlServerDocker
+	url = https://github.com/samuelpratt/SqlServerDocker.git
